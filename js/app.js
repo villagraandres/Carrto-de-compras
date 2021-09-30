@@ -30,20 +30,23 @@ function agregarCurso(e) {
     e.preventDefault();
    
     cantidad++;
+       
+        
+    
+        
+    if (e.target.classList.contains('agregar-carrito')) {
+        const cursoSeleccionado= e.target.parentElement.parentElement
+        leerDatosCurso(cursoSeleccionado);
         mensajeCarrito.classList.add('activo')
+       
+        document.getElementById('numero-carrito').innerHTML=`${cantidad}`
+
         if (mensajeCarrito.classList.contains('activo')) {
             setTimeout(function activo(params) {
                mensajeCarrito.classList.remove('activo')
               
             },3000)
         }
-    
-        document.getElementById('numero-carrito').innerHTML=`${cantidad}`
-
-    if (e.target.classList.contains('agregar-carrito')) {
-        const cursoSeleccionado= e.target.parentElement.parentElement
-        leerDatosCurso(cursoSeleccionado);
-        
        
     }
     
